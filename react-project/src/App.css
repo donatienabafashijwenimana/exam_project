@@ -156,19 +156,23 @@ body {
   flex-direction: column;
   padding: 1pc 0;
   gap: 0.5pc
+  
 }
 
 .left-menu .menu-item {
   /* background-color: #1d2f41; */
   padding: 10px;
   display: flex;
-  font-size: 1.3pc;
+  font-size: 1pc;
   font-weight: 500;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   gap: 8px;
   color: black;
+  background-color: transparent;
+  border: none;
   text-transform: capitalize;
+  text-decoration: none;
 }
 
 .left-menu .menu-item:hover {
@@ -185,9 +189,110 @@ body {
 .dash-main {
   height: 10pc;
   width: 100%;
+  box-sizing: border-box;
   gap: 1pc;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 1pc;
 
 }
+
+.main-table {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 0.4pc;
+  display: flex;
+  flex-direction: column;
+}
+.main-table-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5pc;
+}
+.main-table-top-left {
+  display: flex;
+  gap: 0.5pc;
+}
+.main-table-top-left button {
+  padding: 0.3pc 0.8pc;
+  background-color: #021261;
+  color: white;
+  height: 2pc;
+  border: none;
+  border-radius: 0.3pc;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5pc;
+  font-weight: 600;
+}
+.main-table-top-left button:hover {
+  background-color: rgb(19, 21, 115);
+}
+.main-table-top input {
+  padding: 0.3pc;
+  width: 25%;
+  outline :1px solid rgba(79, 78, 78, 0.374);
+  border: rgba(79, 78, 78, 0.374) solid 1px;
+  border-radius: 0.3pc;
+}
+.main-table-body {
+  width: 100%;
+  height: 100%;
+  margin: 2pc auto;
+  box-sizing: border-box;
+  padding: 0.5pc;
+  max-height: 25pc;
+  overflow: auto;
+}
+.main-table-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main-table-body table thead {
+  background-color: #1d2f41;
+  color: white;
+}
+.main-table-body table thead tr {
+  height: 2.5pc;
+}
+.main-table-body table thead tr th {
+  padding: 0.5pc;
+  text-align: left;
+}
+.main-table-body table tbody tr {
+  height: 2.5pc;
+  border-bottom: rgba(79, 78, 78, 0.374) solid 1px;
+}
+.main-table-body table tbody tr td {
+  padding: 0.5pc;
+}
+.main-table-body table tbody tr:hover {
+  background-color: rgba(79, 78, 78, 0.374);
+}
+.main-table-body table tbody tr td:last-child {
+  display: flex;
+  gap: 0.5pc;
+  width:6pc;
+}
+.main-table-body table tbody tr td:last-child button {
+  padding: 0.3pc 0.8pc;
+  background-color: #021261;
+  color: white;
+  height: 2pc;
+  border: none;
+  border-radius: 0.3pc;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5pc;
+  font-weight: 600;
+}
+.main-table-body table tbody tr td:last-child button:hover {
+  background-color: rgb(18, 21, 182);
+} 

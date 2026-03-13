@@ -3,9 +3,9 @@ import { FaEdit, FaPlus, FaPrint, FaShoePrints } from 'react-icons/fa'
 import { FaDeleteLeft } from 'react-icons/fa6'
 import votingData from '../datasource'
 
-function Position() {
+function Voters() {
 
-    const [posts, setPosts] = useState(votingData.posts);
+    const [votes, setVotes] = useState(votingData.voters);
   return (
     <div className='main-table'>
       <div className="main-table-top">
@@ -20,17 +20,17 @@ function Position() {
           <thead>
             <tr>
               <th>#</th>
-              <th>Position Title</th>
+              <th></th>
               <th>Location</th>
               <th>Action</th>
             </tr>
           </thead>
          <tbody>
-            {posts.map((post, index) => (
-              <tr key={post.id}>
+            {votes.map((vote, index) => (
+              <tr key={vote.id}>
                 <td>{index + 1}</td>
-                <td>{post.title}</td>
-                <td>{post.location}</td>
+                <td>{vote.name}</td> 
+                <td>{vote.location}</td>
                 <td>
                   <button className='edit'><FaEdit/> Edit</button>
                   <button className='delete'><FaDeleteLeft /> Delete</button>
@@ -44,4 +44,4 @@ function Position() {
   )
 }
 
-export default Position
+export default Voters
