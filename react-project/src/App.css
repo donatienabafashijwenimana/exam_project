@@ -12,7 +12,7 @@ body {
   width: 100%;
   /* display: flex; */
   padding: 0.1pc;
-  height: 37.2pc;
+  height: auto;
   box-sizing: border-box;
   background-color: rgba(211, 205, 205, 0.516);
 }
@@ -311,7 +311,7 @@ main{
 
 @media (max-width:720px){
   main{
-    height: 32pc;
+    height: 55pc;
   }
   .container{
     overflow-x: auto;
@@ -319,6 +319,7 @@ main{
    .left-sidebar{
     width: 50%;
     display: none;
+    height: 100%;
    }
    .right-sidebar{
         width: 100%;
