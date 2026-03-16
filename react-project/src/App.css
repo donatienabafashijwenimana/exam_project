@@ -16,7 +16,10 @@ body {
   box-sizing: border-box;
   background-color: rgba(211, 205, 205, 0.516);
 }
-
+main{
+  display: flex;
+  height: 37pc;
+}
 .left-sidebar {
   background-color: rgb(255, 255, 255);
   width: 20%;
@@ -296,3 +299,37 @@ body {
 .main-table-body table tbody tr td:last-child button:hover {
   background-color: rgb(18, 21, 182);
 } 
+
+
+
+@media (max-width:720px){
+  main{
+    height: 32pc;
+  }
+  .container{
+    overflow-x: auto;
+  }
+   .left-sidebar{
+    width: 50%;
+    display: none;
+   }
+   .right-sidebar{
+        width: 100%;
+   }
+   .dash-top{
+    width: 100%;
+    grid-template-columns: repeat(2,1fr);
+   }
+   .card-title{
+    font-size: 12px;
+   }
+   .card-no{
+    font-size: 1pc ;
+   }
+   .dash-main{
+    grid-template-columns: repeat(3,1fr);
+   }
+   .card.small{
+    height: 4pc;
+   }
+}

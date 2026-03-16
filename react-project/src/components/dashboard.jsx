@@ -56,7 +56,7 @@ function Dashboard() {
       {/* Top Charts */}
       <div className="dash-top">
         <div className="card">
-          <Bar height="100%" data={barData} />
+          <Bar height="100%" width={'100%'} data={barData} />
         </div>
         <div className="card card-top">
           <Pie height="100%" width="100%" data={pieData} />
