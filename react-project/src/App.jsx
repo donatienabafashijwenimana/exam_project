@@ -16,6 +16,7 @@ function App() {
   return (
     <div className='container'>
       <main>
+        <input type="checkbox" name="" id="humberg" />
         <div className="left-sidebar">
           <div className="left-sidebar-title">
             <FaVoteYea size={35} />AVMS
@@ -46,7 +47,7 @@ function App() {
         </div>
         <div className="right-sidebar">
           <div className="top">
-            <div className="top-left">{page}
+            <div className="top-left"><label htmlFor="humberg">&#9776;</label> {page}
             </div>
             <div className="top-right">
 
