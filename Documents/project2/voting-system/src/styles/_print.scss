@@ -1,0 +1,57 @@
+@media print {
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+  }
+  body * {
+    visibility: hidden;
+  }
+  main, main * {
+    visibility: visible;
+  }
+  main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  /* Hide all UI */
+  .MuiAppBar-root, .sidebar, nav, header, footer, button, dialog, .MuiDataGrid-toolbarContainer, .MuiDataGrid-pagination, .MuiDataGrid-columnHeaders {
+    display: none !important;
+  }
+  /* DataGrid fixes */
+  .MuiDataGrid-root {
+    height: auto !important;
+    max-height: none !important;
+    font-size: 10pt;
+  }
+  .MuiDataGrid-virtualScroller {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .MuiDataGrid-row {
+    page-break-inside: avoid;
+    height: auto !important;
+  }
+  .MuiDataGrid-cell {
+    border-bottom: 1px solid #ddd !important;
+    padding: 8px 4px !important;
+    font-size: 10pt !important;
+  }
+  /* Page breaks */
+  h1, h2, h3, h5 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+}
