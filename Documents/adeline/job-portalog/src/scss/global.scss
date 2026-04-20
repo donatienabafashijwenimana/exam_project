@@ -1,0 +1,43 @@
+
+@import './variables';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+
+  &--review { background: #FFF3CD; color: #856404; }
+  &--shortlisted { background: #D1ECF1; color: #0C5460; }
+  &--hired { background: #D4EDDA; color: #155724; }
+  &--rejected { background: #F8D7DA; color: #721C24; }
+}
+
+.page-enter { animation: fadeSlide 0.35s ease forwards; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}

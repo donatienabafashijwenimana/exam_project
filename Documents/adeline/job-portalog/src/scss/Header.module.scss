@@ -1,0 +1,44 @@
+@import './variables';
+
+.header {
+  height: 64px;
+  @include flex-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 87, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+  &__brand {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    span { color: $primary; }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__role-badge {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, $primary, #4B8EFF);
+    color: #fff;
+  }
+
+  @include responsive(md) {
+    padding: 0 16px;
+    &__brand { font-size: 1.1rem; }
+  }
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobPortal Rwanda - Project Presentation</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --ink: #10223a;
+      --muted: #4f6077;
+      --primary: #0057ff;
+      --accent: #ff6b35;
+      --line: #dbe3f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(150deg, #f8fbff 0%, #eef3ff 45%, #f7fbff 100%);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm;
+      margin: 0 auto 12px;
+      background: var(--card);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page:last-child { page-break-after: auto; }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+      border-radius: 14px;
+      padding: 5px 11px;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 { margin: 0 0 8px; }
+    h1 { font-size: 34px; line-height: 1.12; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 17px; color: var(--primary); }
+    p { margin: 6px 0 10px; color: var(--muted); }
+
+    .hero {
+      background: linear-gradient(130deg, #0f2b6f 0%, #0057ff 60%, #3f87ff 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+    }
+    .hero p { color: #eaf2ff; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .card h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    ul { margin: 6px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; color: var(--muted); }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .chip {
+      font-size: 12px;
+      border: 1px solid #bfd3ff;
+      color: #0b3ea8;
+      background: #edf4ff;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-weight: 600;
+    }
+
+    .kpi-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .kpi {
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      background: #f9fbff;
+    }
+
+    .kpi b {
+      display: block;
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .kpi span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #edf4ff;
+      color: #123;
+      font-weight: 700;
+    }
+
+    .demo-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      min-height: 120px;
+    }
+
+    .step .num {
+      font-weight: 800;
+      color: #fff;
+      background: var(--accent);
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .step h4 {
+      margin: 0 0 5px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 16mm;
+      right: 16mm;
+      font-size: 11px;
+      color: #6b7a90;
+      border-top: 1px solid var(--line);
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="hero">
+      <div class="badge">ITLDF601 Frontend Assessment</div>
+      <h1>JobPortal Rwanda</h1>
+      <p>A role-based React web application connecting applicants and employers through a modern, data-driven recruitment workflow.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Project Goal</h4>
+        <p>Build a complete frontend hiring platform where:</p>
+        <ul>
+          <li>Applicants can discover jobs and apply with CV upload.</li>
+          <li>Employers can post jobs, manage applications, and review analytics.</li>
+          <li>Both roles get a clear, responsive, and secure navigation experience.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Business Value</h4>
+        <ul>
+          <li>Reduces friction between job posting and candidate submission.</li>
+          <li>Provides immediate visibility into recruitment activity.</li>
+          <li>Improves candidate quality with built-in validation and structured forms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 14px;">Technology Stack</h3>
+    <div class="stack">
+      <span class="chip">React</span>
+      <span class="chip">React Router</span>
+      <span class="chip">Context API</span>
+      <span class="chip">MUI + DataGrid</span>
+      <span class="chip">Recharts</span>
+      <span class="chip">SCSS Modules</span>
+      <span class="chip">LocalStorage persistence</span>
+    </div>
+
+    <h3 style="margin-top: 14px;">At-a-Glance Metrics (Current Mock Data)</h3>
+    <div class="kpi-wrap">
+      <div class="kpi"><b>2</b><span>User roles (Applicant, Employer)</span></div>
+      <div class="kpi"><b>5</b><span>Initial jobs seeded</span></div>
+      <div class="kpi"><b>3</b><span>Initial applicants seeded</span></div>
+      <div class="kpi"><b>4</b><span>Analytics visualizations</span></div>
+    </div>
+
+    <h3 style="margin-top: 14px;">Demo Credentials</h3>
+    <table>
+      <tr>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+      <tr>
+        <td>Applicant</td>
+        <td>applicant@demo.com</td>
+        <td>pass123</td>
+      </tr>
+      <tr>
+        <td>Employer</td>
+        <td>employer@demo.com</td>
+        <td>pass123</td>
+      </tr>
+    </table>
+
+    <div class="footer">
+      <span>JobPortal Rwanda - Presentation Deck</span>
+      <span>Page 1</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="badge">System Design</div>
+    <h2>Architecture & Key Features</h2>
+    <p>The app is organized around protected routes, reusable components, and a shared global context for state, theme, and workflow actions.</p>
+
+    <div class="grid-2" style="margin-top:10px;">
+      <div class="card">
+        <h4>Role-Based Routing</h4>
+        <ul>
+          <li>`/employer/*` protected for employer role only.</li>
+          <li>`/applicant/*` protected for applicant role only.</li>
+          <li>Automatic redirects on unauthorized access.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Global State (AppContext)</h4>
+        <ul>
+          <li>Auth state, jobs, applicants, and theme mode.</li>
+          <li>CRUD operations for jobs and applications.</li>
+          <li>Data persisted in localStorage with TTL strategy.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Applicant Experience</h4>
+        <ul>
+          <li>Job search with filters (type, industry, keyword).</li>
+          <li>Job detail modal and one-click application flow.</li>
+          <li>CV upload with PDF + size validation (max 2MB).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Employer Experience</h4>
+        <ul>
+          <li>Manage jobs with DataGrid actions (view/edit/delete).</li>
+          <li>Add/Edit posting with salary & required field validation.</li>
+          <li>Analytics dashboard with Bar, Pie, Area, and Line charts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 14px;">Quality Highlights</h3>
+    <ul>
+      <li>Responsive layout behavior across desktop/tablet/mobile breakpoints.</li>
+      <li>Dark/Light mode support with centralized MUI theming.</li>
+      <li>Reusable dialog components for detail views and confirmations.</li>
+      <li>Clear component separation across pages, charts, dialogs, and layout.</li>
+    </ul>
+
+    <h3 style="margin-top: 10px;">Live Demo Script (Presenter Flow)</h3>
+    <div class="demo-flow">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Login as Employer</h4>
+        <p>Show protected dashboard and open Manage Jobs list.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Post / Edit Job</h4>
+        <p>Create or edit a job, then verify it appears in DataGrid.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Show Analytics</h4>
+        <p>Open charts page and explain each metric briefly.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Switch to Applicant</h4>
+        <p>Browse jobs and apply using the modal form.</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <h4>Upload CV</h4>
+        <p>Demonstrate PDF validation and successful submission.</p>
+      </div>
+      <div class="step">
+        <div class="num">6</div>
+        <h4>Wrap Up</h4>
+        <p>Summarize architecture, UX, and future improvements.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 12px;">Future Improvements</h3>
+    <ul>
+      <li>Connect to backend APIs and replace mock data/localStorage.</li>
+      <li>Add unit/integration tests for critical flows.</li>
+      <li>Enable role-based admin monitoring and audit history.</li>
+      <li>Add notifications (email/in-app) for status updates.</li>
+    </ul>
+
+    <div class="footer">
+      <span>Prepared for project presentation</span>
+      <span>Page 2</span>
+    </div>
+  </section>
+</body>
+</html>

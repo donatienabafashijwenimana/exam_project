@@ -1,0 +1,85 @@
+@import './variables';
+
+.sidebar {
+  width: 240px;
+  height: calc(100vh - 64px);
+  position: fixed;
+  top: 64px;
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  border-right: 1px solid rgba(0, 87, 255, 0.08);
+  z-index: 1100;
+
+  &__nav { 
+    padding: 16px 1pc; 
+  }
+
+  &__section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 12px 6px;
+    opacity: 0.45;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin-bottom: 2px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover { background: rgba(0, 87, 255, 0.08); color: $primary; }
+    &--active { background: rgba(0, 87, 255, 0.12); color: $primary; }
+
+    svg { font-size: 20px; }
+  }
+
+  &__toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1300;
+  }
+
+  @include responsive(lg) {
+    transform: translateX(-100%);
+    &--open { transform: translateX(0); }
+    &__toggle { display: flex; }
+  }
+}
+
+.layout {
+  display: flex;
+
+  &__main {
+    margin-left: 240px;
+    flex: 1;
+    min-height: calc(100vh - 64px);
+    padding: 24px;
+    transition: margin 0.3s;
+
+    @include responsive(lg) { margin-left: 0; padding: 16px; }
+    @include responsive(md) { padding: 12px; }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1099;
+
+  @include responsive(lg) { display: block; }
+}

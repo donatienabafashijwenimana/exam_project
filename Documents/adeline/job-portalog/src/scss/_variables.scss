@@ -1,0 +1,35 @@
+// ─── Variables ───────────────────────────────────────────────
+$primary: #0057FF;
+$secondary: #FF6B35;
+$success: #00C896;
+$danger: #FF4757;
+$warning: #FFA502;
+
+$radius: 12px;
+$radius-sm: 8px;
+$shadow: 0 4px 24px rgba(0, 87, 255, 0.08);
+$shadow-hover: 0 8px 32px rgba(0, 87, 255, 0.18);
+
+// ─── Breakpoints ─────────────────────────────────────────────
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// ─── Mixins ──────────────────────────────────────────────────
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin responsive($bp) {
+  @if $bp == sm { @media (max-width: #{$bp-sm}) { @content; } }
+  @else if $bp == md { @media (max-width: #{$bp-md}) { @content; } }
+  @else if $bp == lg { @media (max-width: #{$bp-lg}) { @content; } }
+}
