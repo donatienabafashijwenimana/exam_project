@@ -19,7 +19,6 @@ import './Sidebar.scss';
 const PERMISSION_ROUTES = {
   dashboard: { icon: <Dashboard />, text: 'Dashboard', permission: null },
   progress: { icon: <TrendingUp />, text: 'My Progress', permission: 'view_progress' },
-  view_progress: { icon: <BarChart />, text: 'View Progress', permission: 'view_progress' },
   schedule: { icon: <CalendarMonth />, text: 'My Schedule', permission: 'view_schedule' },
   assigned: { icon: <People />, text: 'Assigned Learners', permission: 'view_assigned_learners' },
   availability: { icon: <Schedule />, text: 'Availability', permission: 'manage_availability' },
