@@ -1,0 +1,139 @@
+@use '../../styles/variables' as *;
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+
+  &__hero {
+    background: linear-gradient(160deg, #071a3c 0%, #0d2b5e 55%, #1a1040 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 52px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 169, 74, 0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,74,158,0.3) 0%, transparent 70%);
+      bottom: -80px; left: -60px;
+    }
+
+    @media (max-width: 768px) { display: none; }
+  }
+
+  &__emblem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
+
+    &-icon {
+      width: 52px; height: 52px;
+      background: $gold;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    &-text {
+      color: #fff;
+      font-family: $font-display;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__hero-title {
+    font-family: $font-display;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  &__hero-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  &__features {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.875rem;
+
+    &-dot {
+      width: 7px; height: 7px;
+      background: $gold;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  }
+
+  &__form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+  }
+
+  &__form-card {
+    width: 100%;
+    max-width: 420px;
+    animation: fadeUp 0.5s ease;
+  }
+
+  &__form-title {
+    font-family: $font-display;
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  &__form-sub {
+    font-size: 0.875rem;
+    margin-bottom: 32px;
+  }
+
+  &__creds {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: $radius-sm;
+    border: 1px dashed currentColor;
+    opacity: 0.55;
+
+    p { font-size: 0.78rem; line-height: 1.9; }
+    strong { opacity: 0.9; }
+  }
+}
